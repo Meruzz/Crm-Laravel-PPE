@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ActionArea extends Model
+class AcademicYear extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'start_date', 'end_date'];
 
-    // Relaciones aquí si es necesario
+    // Definir relaciones aquí si es necesario
 }
