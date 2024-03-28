@@ -46,9 +46,17 @@ class User extends Authenticatable implements MustVerifyEmail
     ];
 
     // Relación con la tabla 'roles'
+<<<<<<< HEAD
     public function role()
     {
         return $this->belongsTo(Role::class);
     }
 
+=======
+    public function role() {
+        return $this->belongsTo(Role::class);
+    }
+
+    // Otras relaciones y métodos aquí
+>>>>>>> c9512cf9017c6b6444a92b0d0d8815491b1c9659
 }

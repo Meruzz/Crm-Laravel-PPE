@@ -51,7 +51,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+<<<<<<< HEAD
             'last_name' => ['required', 'string', 'max:255'],
+=======
+            'last_name' => [ 'required','string', 'max:255'],
+>>>>>>> c9512cf9017c6b6444a92b0d0d8815491b1c9659
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -78,4 +82,5 @@ class RegisterController extends Controller
             'role_id' => $estudianteRole->id, // Asigna el ID del rol de Estudiante
         ]);
     }
+    
 }
