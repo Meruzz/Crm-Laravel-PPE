@@ -19,8 +19,10 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'name',
+        'last_name',
         'email',
         'password',
+        'role_id',
     ];
 
     /**
@@ -41,4 +43,11 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // Relación con la tabla 'roles'
+    public function role() {
+        return $this->belongsTo(Role::class);
+    }
+
+    // Otras relaciones y métodos aquí
 }

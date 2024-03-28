@@ -5,17 +5,18 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
-    public function up() {
+    public function up(): void {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->text('description')->nullable();
-            $table->foreignId('area_id')->constrained('action_areas')->onDelete('cascade');
+            $table->text('description');
+            $table->unsignedBigInteger('area_id');
+            $table->foreign('area_id')->references('id')->on('action_areas');
             $table->timestamps();
         });
     }
 
-    public function down() {
+    public function down(): void {
         Schema::dropIfExists('activities');
     }
 };
